@@ -1,0 +1,54 @@
+/********** General **********/
+/* .container-fluid{
+    overflow: hidden; unwanted hidden dropdown menu 
+} */
+
+body{
+    background-color: rgb(109, 170, 97)
+}
+
+.navbar{
+    background-color: #7885a0;
+}
+
+.content{
+    margin-top: 50px;
+}
+/********** /general **********/
+
+
+/********** Login **********/
+.login-box{
+    background-color: #22eba8;
+    border-radius: 1cm;
+}
+
+.login-box-inside{
+    padding: 50px;
+}
+
+.login-submit{
+    width: 100%;
+}
+
+.login-singup{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/********** /login **********/
+
+/********** Edit profile **********/
+.edit-profile-box{
+    background-color: #22eba8;
+    border-radius: 1cm;
+}
+
+.edit-profile-box-inside{
+    padding: 50px;
+}
+/********** /edit profile **********/
+
+/********** View profile **********/
+
+/********** /view profile **********/
