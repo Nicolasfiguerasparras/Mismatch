@@ -88,7 +88,7 @@
 
                         <button name="submit" type="submit" class="btn btn-success login-submit">Submit</button>
 
-                        <button class="btn btn-light login-singup" href="singup.php">Sing up</button>
+                        <a class="btn btn-light login-singup" href="singup.php">Sing up</a>
 
                     </form>
 

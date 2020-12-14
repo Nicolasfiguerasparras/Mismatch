@@ -1,9 +1,8 @@
 <?php
     require_once('header.php');
+    session_unset();
     session_destroy();
 
-    if(!empty($_COOKIE['id'])){
-        func::deleteCookie();
-    }
+    func::deleteCookie();
 
     header('Location: index.php');

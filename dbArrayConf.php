@@ -13,4 +13,4 @@
     require_once('ConectorBD.php');
     $cbd = new ConectorBD($config);
 
-    $con = $cbd ->getCon();
+    $con = $cbd->getCon();

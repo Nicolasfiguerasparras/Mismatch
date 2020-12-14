@@ -1,7 +1,7 @@
 /********** General **********/
-/* .container-fluid{
-    overflow: hidden; unwanted hidden dropdown menu 
-} */
+.container-fluid{
+    overflow: hidden;
+}
 
 body{
     background-color: rgb(109, 170, 97)
@@ -15,7 +15,6 @@ body{
     margin-top: 50px;
 }
 /********** /general **********/
-
 
 /********** Login **********/
 .login-box{

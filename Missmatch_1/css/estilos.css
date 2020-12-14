@@ -1,0 +1,267 @@
+body{
+    color: white;
+    background-color: #F5A91D;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; 
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color: #7442F5;
+    box-shadow: 2px 2px 2px rgba(50, 50, 50, 0.5);
+}
+
+a{
+    text-decoration: none;
+    font-weight: 800;
+    color: #7442F5;
+    
+}
+
+h2{
+    padding-left: 30px;
+    margin:0;
+    line-height: 80px;
+    color: white;
+}
+
+.logo{
+    width: 50%;
+    float: left;
+}
+
+footer{
+    border-top: 1px solid #7442F5;
+    height:60 px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding-top: 20px;
+    color:#7442F5;
+    
+}
+
+.wrapper{
+    width: 500px;
+    margin: 120px auto;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 2px 2px 2px rgba(50, 50, 50, 0.5);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #7442F5;
+    text-align: center;
+    
+}
+
+/*-----------------------form styles-----------------------*/
+
+.login-header{
+    background-color: #7442F5;
+    height: 60px;
+    line-height: 60px;
+    color:white;
+    text-align: center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+form{
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+
+.field{
+    padding: 10px 0;
+}
+
+
+.field label{
+    width: 300px;
+}
+
+
+.field:nth-child(1), .field:nth-child(2){
+    padding: 10px 80px;
+}
+
+
+.field:nth-child(3){
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.8em;
+    
+}
+
+.field:nth-child(4){
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+.field:nth-child(4) a{
+    color: darkseagreen;
+}
+
+
+.field:nth-child(4) a::after{
+    content: "\2192"; /* html cheat seet*/
+}
+
+
+.field:nth-child(5){
+    margin-top: 20px;
+}
+
+label{
+    color: #333;
+}
+
+input[type=text]{
+    width : 65%;
+    float: right;
+    font-size: 1.1em;
+}
+
+input[type=password]{
+    width : 65%;
+    float: right;
+    font-size: 1.1em;
+}
+
+input[type=date]{
+    width : 65%;
+    float: right;
+    font-size: 1.1em;
+}
+
+
+button{
+    padding: 12px 12px;
+    width: 100%;
+    color: #fff;
+    background: transparent;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #3160B6;
+    border: 0;
+    transition: all 0.15s ease;
+}
+
+.button{
+    background: #7442F5;
+    text-shadow: 1px 1px 1px rgba(39, 110, 204, 0.5);
+}
+
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding: .5em 1em;
+  height: 50px;
+  padding-top: 1.5em;
+}
+
+nav li a:hover {
+  background: tomato;
+  color: white;
+}
+
+.Total{
+    width: 1000px;
+    height: 600px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row; /*hace fila*/
+    flex-wrap: wrap; /*Envia abajo cuando rebasa*/
+}
+
+.global{
+    flex: 25%;
+    height: 125px;
+    display: flex;
+}
+
+.nombreUsuario{
+    flex:50%;
+    text-align: right;
+    
+    
+}
+.imagenUsuario{
+    flex:50%; /*coge la mitad del flex total del .global*/
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    border:5px solid tomato;
+}
+
+.hola{
+  float: left;
+  display: block;
+  padding: .5em 1em;
+  text-decoration: none;
+  font-weight: 800;
+  color: white;
+}
+
+.titulo{
+    flex:30%;
+    width:25%;
+}
+
+.imgicon{
+    height: 50px;
+    border-radius: 50%;
+    border:5px solid tomato;
+}
+/*----------------------------------------------------------------------------*/
+
+.total2 {
+    width: 1000px;
+    height: 600px;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+
+.fotoPerfil {
+    flex: 40%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 20px;
+}
+
+
+.form2 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.camposPerfil {
+    flex: 40%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.profiledeuser{
+    font-size: 3em;
+    margin-left: 1em;
+}

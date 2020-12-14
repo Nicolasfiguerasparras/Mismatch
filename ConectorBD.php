@@ -1,12 +1,7 @@
 <?php
 
-    /**
-     * Clase encargada de conectarse a la base de datos
-     */
-
     class ConectorBD {
         
-        /* $configuracion es el array que va a contener los datos que van a formar el dns para establecer la conexión. Esos datos están en un array a parte, guardados en un archivo php. Cuando quieras crear una conexión a una base de datos, crearas un objeto de esta clase, que, recopilará los datos de conexión, en su constructor, y llamará a un método que será el que cree el objeto PDO que realmente se conecta a la base de datos.*/
         protected $configuracion;
         public $dbc;
 
@@ -51,5 +46,9 @@
             if($this->dbc instanceof PDO){
                 return $this->dbc;
             }
+        }
+
+        public function printHello(){
+            return "Hello";
         }
     }
