@@ -6,7 +6,7 @@
 
     /***** Allow only logged in users *****/
 
-        if(!func::checkLogin($con)){
+        if(!func::checkLogin($connection)){
             header('Location: login.php');
         }else{
             if(isset($_POST['submit'])){
@@ -19,41 +19,68 @@
                 $gender = $_POST['gender'];
                 $city = $_POST['city'];
                 $state = $_POST['state'];
+                $image = $_FILES['file']['name'];
 
-                if($password == ""){
-                    $sql = "UPDATE `users` SET `users_username` = :username, 
-                                                `users_status` = :status, 
-                                                `users_name` = :name, 
-                                                `users_lastname` = :lastname, 
-                                                `users_gender` = :gender,
-                                                `users_city` = :city, 
-                                                `users_state` = :state
+                if(empty($image)){
+                    if(empty($password)){
+                        $sql = "UPDATE `users` SET `users_username` = :username, 
+                                                    `users_status` = :status, 
+                                                    `users_name` = :name, 
+                                                    `users_lastname` = :lastname, 
+                                                    `users_gender` = :gender,
+                                                    `users_city` = :city, 
+                                                    `users_state` = :state
+                                                WHERE `users_id` = '".$_SESSION['id']."'";
+                        $stmt = $connection->prepare($sql);
+    
+                        $stmt->execute(array(':username'=>$username, ':status'=>$status, 'name'=>$name, ':lastname'=>$lastname, ':gender'=>$gender, ':city'=>$city, ':state'=>$state));
+                    }else{
+                        $sql = "UPDATE `users` SET `users_username` = :username,
+                                                    `users_password` = :password,
+                                                    `users_status` = :status, 
+                                                    `users_name` = :name, 
+                                                    `users_lastname` = :lastname, 
+                                                    `users_gender` = :gender,
+                                                    `users_city` = :city, 
+                                                    `users_state` = :state
                                             WHERE `users_id` = '".$_SESSION['id']."'";
-                    $stmt = $con->prepare($sql);
+                        $stmt = $connection->prepare($sql);
 
-                        /** NO FUNCIONA CON bindParam **/
-                            // $stmt->bindParam(':id', $id);
-                            // $stmt->bindParam(':username', $username);
-                            // $stmt->bindParam(':status', $status);
-                            // $stmt->bindParam(':name', $name);
-                            // $stmt->bindParam(':lastname', $lastname);
-                            // $stmt->bindParam(':gender', $gender);
-                            // $stmt->bindParam(':city', $city);
-                            // $stmt->bindParam(':state', $state);
-                        /** NO FUNCIONA CON bindParam **/
-
-                    $stmt->execute(array(':username'=>$username, ':status'=>$status, 'name'=>$name, ':lastname'=>$lastname, ':gender'=>$gender, ':city'=>$city, ':state'=>$state));
+                        $stmt->execute(array(':username'=>$username, ':status'=>$status, 'name'=>$name, ':lastname'=>$lastname, ':gender'=>$gender, ':city'=>$city, ':state'=>$state, ':password'=>sha1($password)));
+                        header('Location: logout.php');
+                    }
                 }else{
-                    $sql = "UPDATE `users`  SET `users_username` = ':username', 
-                                                `users_password` = ':password', 
-                                                `users_status` = ':status', 
-                                                `users_name` = ':name', 
-                                                `users_lastname` = ':lastname', 
-                                                `users_gender` = ':gender', 
-                                                `users_birthdate` = ':birthdate', 
-                                                `users_city` = ':city', 
-                                                `users_state` = ':state'
-                                            WHERE `users`.`users_id` = :id";
+                    if(empty($password)){
+                        $sql = "UPDATE `users` SET `users_username` = :username, 
+                                                    `users_status` = :status, 
+                                                    `users_name` = :name, 
+                                                    `users_lastname` = :lastname, 
+                                                    `users_gender` = :gender,
+                                                    `users_city` = :city, 
+                                                    `users_state` = :state,
+                                                    `users_picture` = :picture
+                                                WHERE `users_id` = '".$_SESSION['id']."'";
+                        $stmt = $connection->prepare($sql);
+    
+                        $stmt->execute(array(':username'=>$username, ':status'=>$status, 'name'=>$name, ':lastname'=>$lastname, ':gender'=>$gender, ':city'=>$city, ':state'=>$state, ':picture'=>"img/".$image));
+                        move_uploaded_file($_FILES['file']['tmp_name'], "img/".$_FILES['file']['name']);
+                    }else{
+                        $sql = "UPDATE `users` SET `users_username` = :username,
+                                                    `users_password` = :password,
+                                                    `users_status` = :status, 
+                                                    `users_name` = :name, 
+                                                    `users_lastname` = :lastname, 
+                                                    `users_gender` = :gender,
+                                                    `users_city` = :city, 
+                                                    `users_state` = :state,
+                                                    `users_picture` = :picture
+                                            WHERE `users_id` = '".$_SESSION['id']."'";
+                        $stmt = $connection->prepare($sql);
+
+                        $stmt->execute(array(':username'=>$username, ':status'=>$status, 'name'=>$name, ':lastname'=>$lastname, ':gender'=>$gender, ':city'=>$city, ':state'=>$state, ':picture'=>"img/".$image, ':password'=>sha1($password)));
+                        move_uploaded_file($_FILES['picture']['tmp_name'], "imgs/".$_FILES['picture']['name']);
+                        header('Location: logout.php');
+                    }
                 }
             }
 
@@ -62,7 +89,7 @@
 
             // Get all data from logged user
             $sql = "SELECT * FROM users WHERE users_id = :id";
-            $stmt = $con->prepare($sql);
+            $stmt = $connection->prepare($sql);
             $stmt->bindValue(':id', $id);
             $stmt->execute();
             $row = $stmt-> fetch(PDO::FETCH_ASSOC);
@@ -93,7 +120,7 @@
 
                 <div class="edit-profile-box-inside">
 
-                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" enctype="multipart/form-data">
 
                         <!-- Hidden ID value -->
                         <input type="hidden" value="<?php echo $row['users_id']; ?>" name="id">
@@ -205,6 +232,11 @@
                                 <label for="inputZip">State</label>
                                 <input type="text" class="form-control" id="inputZip" name="state" value="<?php echo $row['users_state']; ?>">
                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Profile image</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
                         </div>
 
                         <button type="submit" class="btn btn-primary" name="submit">Edit profile</button>

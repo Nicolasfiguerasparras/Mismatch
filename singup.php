@@ -15,7 +15,7 @@
 
     if(isset($_POST['submit'])){
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = sha1($_POST['password']);
         $status = $_POST['status'];
         $name = $_POST['name'];
         $lastname = $_POST['lastname'];
@@ -46,7 +46,9 @@
                                     '$city', 
                                     '$state')";
                             
-        $conbd->retornoNumTuplas($query);
+        $conbd->returnTupleNumber($query);
+
+        header('Location: login.php');
     }
 ?>
 

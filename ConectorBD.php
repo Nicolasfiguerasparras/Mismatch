@@ -7,10 +7,10 @@
 
         public function __construct($confiArray){
             $this->configuracion = $confiArray;
-            $this->establecerConexion();
+            $this->startConnection();
         }
 
-        public function establecerConexion(){
+        public function startConnection(){
             $dns = ''.$this->configuracion['driver'].':host='.$this->configuracion['host'].';dbname='.$this->configuracion['dbname'];
             $opciones =array(
                 PDO::ATTR_PERSISTENT => true,
@@ -24,31 +24,27 @@
             }
         }
 
-        public function consultaConRetorno($sql){
+        public function queryWithReturn($sql){
             try{
-                $resultado = $this->dbc->query($sql);
+                $result = $this->dbc->query($sql);
             }catch(PDOException $e){
                 echo $e->getMessage();
             }
-            return $resultado;
+            return $result;
         }
         
-        public function retornoNumTuplas($sql){
+        public function returnTupleNumber($sql){
             try{
-                $resultado = $this->dbc->exec($sql);
+                $result = $this->dbc->exec($sql);
             }catch(PDOException $e){
                 echo $e->getMessage();
             }
-            return $resultado;
+            return $result;
         }
         
-        public function getCon(){
+        public function getConnection(){
             if($this->dbc instanceof PDO){
                 return $this->dbc;
             }
-        }
-
-        public function printHello(){
-            return "Hello";
         }
     }

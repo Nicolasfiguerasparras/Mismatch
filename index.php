@@ -14,7 +14,7 @@
 
                     /***** Navbar load *****/
 
-                        if(!func::checkLogin($con)){
+                        if(!func::checkLogin($connection)){
                             require_once('navbar/navClearUser.php');
                         }else{
                             $username = $_SESSION['username'];

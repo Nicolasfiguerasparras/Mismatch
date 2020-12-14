@@ -6,7 +6,7 @@
 
     /***** Allow only clear users *****/
 
-        if(func::checkLogin($con)){
+        if(func::checkLogin($connection)){
             header('Location: index.php');
         }else{
             if(isset($_POST['submit'])){
@@ -14,17 +14,18 @@
                     $username = $_POST['username'];
                     $password = sha1($_POST['password']);
                     $sql = "SELECT * FROM users WHERE users_username = :username AND users_password = :password";
-                    $stmt = $con->prepare($sql);
+                    $stmt = $connection->prepare($sql);
                     $stmt->bindValue(':username', $username);
                     $stmt->bindValue(':password', $password);
                     $stmt->execute();
                     $row = $stmt-> fetch(PDO::FETCH_ASSOC);
-                    if($row['users_id'] > 0){
+                    print_r($row);
+                    if($row){
                         // Check if user wants to remember session
                         if($_POST['rememberme'] == 1){
-                            func::recordSession($con, $row['users_id'], $username, 1);
+                            func::recordSession($connection, $row['users_id'], $username, 1);
                         }else{
-                            func::recordSession($con, $row['users_id'], $username, 0);
+                            func::recordSession($connection, $row['users_id'], $username, 0);
                         }
                         header('Location: index.php');
                     }else{

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-12-2020 a las 03:15:57
--- Versión del servidor: 10.1.36-MariaDB
--- Versión de PHP: 7.2.11
+-- Tiempo de generación: 14-12-2020 a las 07:32:39
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -62,31 +61,156 @@ CREATE TABLE `mismatch_response` (
 --
 
 INSERT INTO `mismatch_response` (`response_id`, `user_id`, `topic_id`, `response`) VALUES
-(1, 3, 1, 1),
-(2, 3, 2, NULL),
-(3, 3, 3, NULL),
-(4, 3, 4, NULL),
-(5, 3, 5, NULL),
-(6, 3, 6, NULL),
-(7, 3, 7, NULL),
-(8, 3, 8, NULL),
-(9, 3, 9, NULL),
-(10, 3, 10, NULL),
-(11, 3, 11, NULL),
-(12, 3, 12, NULL),
-(13, 3, 13, NULL),
-(14, 3, 14, NULL),
-(15, 3, 15, NULL),
-(16, 3, 16, NULL),
-(17, 3, 17, NULL),
-(18, 3, 18, NULL),
-(19, 3, 19, NULL),
-(20, 3, 20, NULL),
-(21, 3, 21, NULL),
-(22, 3, 22, NULL),
-(23, 3, 23, NULL),
-(24, 3, 24, NULL),
-(25, 3, 25, NULL);
+(26, 6, 1, 0),
+(27, 6, 2, 0),
+(28, 6, 3, 0),
+(29, 6, 4, 0),
+(30, 6, 5, 0),
+(31, 6, 6, 0),
+(32, 6, 7, 0),
+(33, 6, 8, 0),
+(34, 6, 9, 0),
+(35, 6, 10, 0),
+(36, 6, 11, 0),
+(37, 6, 12, 0),
+(38, 6, 13, 0),
+(39, 6, 14, 0),
+(40, 6, 15, 0),
+(41, 6, 16, 0),
+(42, 6, 17, 0),
+(43, 6, 18, 0),
+(44, 6, 19, 0),
+(45, 6, 20, 0),
+(46, 6, 21, 0),
+(47, 6, 22, 0),
+(48, 6, 23, 0),
+(49, 6, 24, 0),
+(50, 6, 25, 0),
+(51, 7, 1, 1),
+(52, 7, 2, 1),
+(53, 7, 3, 1),
+(54, 7, 4, 1),
+(55, 7, 5, 1),
+(56, 7, 6, 1),
+(57, 7, 7, 1),
+(58, 7, 8, 1),
+(59, 7, 9, 1),
+(60, 7, 10, 1),
+(61, 7, 11, 1),
+(62, 7, 12, 1),
+(63, 7, 13, 1),
+(64, 7, 14, 1),
+(65, 7, 15, 1),
+(66, 7, 16, 1),
+(67, 7, 17, 1),
+(68, 7, 18, 1),
+(69, 7, 19, 1),
+(70, 7, 20, 1),
+(71, 7, 21, 1),
+(72, 7, 22, 1),
+(73, 7, 23, 1),
+(74, 7, 24, 1),
+(75, 7, 25, 1),
+(76, 8, 1, 1),
+(77, 8, 2, 1),
+(78, 8, 3, 0),
+(79, 8, 4, 0),
+(80, 8, 5, 1),
+(81, 8, 6, 1),
+(82, 8, 7, 0),
+(83, 8, 8, 0),
+(84, 8, 9, 0),
+(85, 8, 10, 1),
+(86, 8, 11, 0),
+(87, 8, 12, 1),
+(88, 8, 13, 1),
+(89, 8, 14, 1),
+(90, 8, 15, 1),
+(91, 8, 16, 1),
+(92, 8, 17, 1),
+(93, 8, 18, 1),
+(94, 8, 19, 1),
+(95, 8, 20, 0),
+(96, 8, 21, 0),
+(97, 8, 22, 1),
+(98, 8, 23, 0),
+(99, 8, 24, 1),
+(100, 8, 25, 1),
+(101, 9, 1, 1),
+(102, 9, 2, 0),
+(103, 9, 3, 0),
+(104, 9, 4, 1),
+(105, 9, 5, 0),
+(106, 9, 6, 0),
+(107, 9, 7, 0),
+(108, 9, 8, 1),
+(109, 9, 9, 0),
+(110, 9, 10, 0),
+(111, 9, 11, 1),
+(112, 9, 12, 0),
+(113, 9, 13, 1),
+(114, 9, 14, 1),
+(115, 9, 15, 0),
+(116, 9, 16, 1),
+(117, 9, 17, 1),
+(118, 9, 18, 1),
+(119, 9, 19, 0),
+(120, 9, 20, 1),
+(121, 9, 21, 0),
+(122, 9, 22, 1),
+(123, 9, 23, 1),
+(124, 9, 24, 1),
+(125, 9, 25, 1),
+(126, 11, 1, 1),
+(127, 11, 2, 0),
+(128, 11, 3, 0),
+(129, 11, 4, 1),
+(130, 11, 5, 1),
+(131, 11, 6, 1),
+(132, 11, 7, 1),
+(133, 11, 8, 1),
+(134, 11, 9, 1),
+(135, 11, 10, 1),
+(136, 11, 11, 1),
+(137, 11, 12, 0),
+(138, 11, 13, 0),
+(139, 11, 14, 0),
+(140, 11, 15, 0),
+(141, 11, 16, 1),
+(142, 11, 17, 0),
+(143, 11, 18, 0),
+(144, 11, 19, 0),
+(145, 11, 20, 0),
+(146, 11, 21, 1),
+(147, 11, 22, 1),
+(148, 11, 23, 0),
+(149, 11, 24, 0),
+(150, 11, 25, 1),
+(151, 10, 1, 1),
+(152, 10, 2, 0),
+(153, 10, 3, 0),
+(154, 10, 4, 0),
+(155, 10, 5, 0),
+(156, 10, 6, 0),
+(157, 10, 7, 1),
+(158, 10, 8, 0),
+(159, 10, 9, 0),
+(160, 10, 10, 0),
+(161, 10, 11, 0),
+(162, 10, 12, 0),
+(163, 10, 13, 0),
+(164, 10, 14, 0),
+(165, 10, 15, 0),
+(166, 10, 16, 1),
+(167, 10, 17, 0),
+(168, 10, 18, 0),
+(169, 10, 19, 0),
+(170, 10, 20, 0),
+(171, 10, 21, 0),
+(172, 10, 22, 0),
+(173, 10, 23, 0),
+(174, 10, 24, 1),
+(175, 10, 25, 0);
 
 -- --------------------------------------------------------
 
@@ -150,7 +274,13 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`sessions_id`, `sessions_token`, `sessions_serial`, `sessions_date`, `sessions_userid`) VALUES
-(20, 'uuhnaenthertrJePenninnsseed5tnneireitrn', NULL, '2020-12-14 01:16:28', 3);
+(26, 'enGtyanlhehnvsenaddeaFhsevnhsrcaelenemoe', NULL, '2020-12-14 04:05:54', 3),
+(40, 'PmJniicoheyyerdulrenteGusunnlFncnanvtwe5', NULL, '2020-12-14 07:22:54', 8),
+(41, 'StdhelaeeerierlereleynBleGgmidentnluttnr', NULL, '2020-12-14 07:23:24', 9),
+(42, 'nenieeh5ivrtttnolBtSTnsuluueinty8uetuneh', NULL, '2020-12-14 07:23:49', 10),
+(43, 'nBlngFpPntinottnavviloInnnentFmlnsf8eeei', NULL, '2020-12-14 07:24:20', 7),
+(44, 'liiyervm5alnfilhem8aBPuvtnegteeydrdenh', NULL, '2020-12-14 07:24:30', 11),
+(45, 'aieBrnfTmfweiwoeedrnraSlveerfnlgistlwtdh', NULL, '2020-12-14 07:24:40', 6);
 
 -- --------------------------------------------------------
 
@@ -178,8 +308,12 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`users_id`, `users_username`, `users_password`, `users_status`, `users_name`, `users_lastname`, `users_gender`, `users_birthdate`, `users_city`, `users_state`, `users_picture`) VALUES
 (1, 'Admin', '4e7afebcfbae000b22c7c85e5560f89a2a0280b4', 1, 'Administrador', 'Gonzalez', 1, '1999-03-22 00:00:00', 'Granada', NULL, NULL),
-(3, 'Yisus', '580ea35d434591d9880ad70419e56e3a061d24f7', 1, 'JesÃºs', 'SÃ¡nchez Miranda', 2, '1999-11-04 00:00:00', 'Granada', 'EspaÃ±a', NULL),
-(5, 'nicopafi', 'nicopafi', 1, 'Nicolas', 'Figueras Parras', 1, '1999-03-22 00:00:00', 'Granada', 'EspaÃ±a', NULL);
+(6, 'nicopafi', 'db1b5240f143d73bb4904235ac052d670705670f', 1, 'Nicolás', 'Figueras Parras', 2, '1999-03-22 00:00:00', 'Granada', 'España', 'img/profile2.jpg'),
+(7, 'beacano', '6cdaf5f17abbb53814450a0ccc0349c1028c23d7', 1, 'Bea', 'Cano', 1, '1999-08-28 00:00:00', 'Granada', 'España', 'img/profile1.jpg'),
+(8, 'jesus', '8d5004c9c74259ab775f63f7131da077814a7636', 1, 'Jesus', 'Sánchez Miranda', 2, '1999-01-01 00:00:00', 'Granada', 'España', 'img/profile3.jpg'),
+(9, 'jorge', '33f927344e079e00d3fa45d8833b04e735223eec', 1, 'Jorge', '', 2, '1999-01-01 00:00:00', 'Granada', 'España', 'img/profile13.jpg'),
+(10, 'mode', 'e78fe7049341b36116d8054f5a3e00d01f245fcc', 2, 'Modesto', '', 2, '1999-01-01 00:00:00', 'Granada', 'España', 'img/profile4.jpg'),
+(11, 'noemi', 'b8c0fc69468c35df5a00022332a69eeab3312588', 1, 'Noemí', 'Parras', 1, '1999-01-01 00:00:00', 'Granada', 'España', 'img/profile7.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -229,7 +363,7 @@ ALTER TABLE `mismatch_category`
 -- AUTO_INCREMENT de la tabla `mismatch_response`
 --
 ALTER TABLE `mismatch_response`
-  MODIFY `response_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `response_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
 
 --
 -- AUTO_INCREMENT de la tabla `mismatch_topic`
@@ -241,13 +375,13 @@ ALTER TABLE `mismatch_topic`
 -- AUTO_INCREMENT de la tabla `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `sessions_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `sessions_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `users_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `users_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

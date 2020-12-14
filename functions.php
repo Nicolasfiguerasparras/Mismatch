@@ -111,8 +111,8 @@
             setcookie('token', $token, time() + (3600 * 24 * 7) , "/");
         }
 
-        public static function recordSession($cbd, $id, $username, $remember) {
-            $cbd->prepare("DELETE FROM sessions WHERE sessions_userid = :id")
+        public static function recordSession($dbc, $id, $username, $remember) {
+            $dbc->prepare("DELETE FROM sessions WHERE sessions_userid = :id")
                 ->execute(array(
                 ':id' => $id
             ));
@@ -121,7 +121,7 @@
                 func::createCookie($id, $username, $token);
             }
             func::createSession($id, $username, $token);
-            $stmt = $cbd->prepare("INSERT INTO sessions (sessions_id, sessions_token, sessions_date, sessions_userid) VALUES (NULL, :token, now(), :userid);");
+            $stmt = $dbc->prepare("INSERT INTO sessions (sessions_id, sessions_token, sessions_date, sessions_userid) VALUES (NULL, :token, now(), :userid);");
             $stmt->execute(array(
                 ':token' => $token,
                 ':userid' => $id

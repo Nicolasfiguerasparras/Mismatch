@@ -6,7 +6,7 @@
 
     /***** Allow only logged in users *****/
 
-        if(!func::checkLogin($con)){
+        if(!func::checkLogin($connection)){
             header('Location: login.php');
         }else{
             // Take ID from SESSION into variable
@@ -14,7 +14,7 @@
 
             // Get all data from logged user
             $sql = "SELECT * FROM users WHERE users_id = :id";
-            $stmt = $con->prepare($sql);
+            $stmt = $connection->prepare($sql);
             $stmt->bindValue(':id', $id);
             $stmt->execute();
             $row = $stmt-> fetch(PDO::FETCH_ASSOC);
@@ -38,6 +38,9 @@
                     $gender = "Men";
                     break;
             }
+
+            $date = new DateTime($row['users_birthdate']);
+            $dateFormatted = $date->format('d-m-Y');
         }
 
     /***** /allow only clear users *****/
@@ -67,7 +70,7 @@
                 <div class="card mb-12">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="img/profile1.jpg" class="card-img" alt="Profile image">
+                            <img src="<?php echo $row['users_picture']; ?>" class="card-img" alt="">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body" style="text-align: center">
@@ -77,7 +80,7 @@
                                 <p class="card-text h4">Name: <?php echo $row['users_name']; ?></p>
                                 <p class="card-text h4">Last name: <?php echo $row['users_lastname']; ?></p>
                                 <p class="card-text h4">Gender: <?php echo $gender; ?></p>
-                                <p class="card-text h4">Birth date: <?php echo $row['users_birthdate']; ?></p>
+                                <p class="card-text h4">Birth date: <?php echo $dateFormatted; ?></p>
                                 <p class="card-text h4">City: <?php echo $row['users_city']; ?></p>
                                 <p class="card-text h4">State: <?php echo $row['users_state']; ?></p>
                             </div>

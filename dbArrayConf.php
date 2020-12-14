@@ -11,6 +11,6 @@
     
     require_once('functions.php');
     require_once('ConectorBD.php');
-    $cbd = new ConectorBD($config);
+    $dbc = new ConectorBD($config);
 
-    $con = $cbd->getCon();
+    $connection = $dbc->getConnection();

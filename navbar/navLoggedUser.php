@@ -6,10 +6,10 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="viewProfile.php">View profile <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="viewProfiles.php">View profiles</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="editProfile.php">Edit profile</a>
+                <a class="nav-link" href="myProfile.php">My profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="myQuestionaire.php">My questionaire <span class="sr-only">(current)</span></a>
